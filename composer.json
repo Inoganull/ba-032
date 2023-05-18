@@ -1,0 +1,14 @@
+{
+    "name": "terra/student-management",
+    "authors": [
+        {
+            "name": "Kyaw Min Hein",
+            "email": "kyawminhein101@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "files": ["helpers.php"],
+        "classmap": ["Utils/"]
+    }
+}

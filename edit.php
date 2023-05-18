@@ -1,6 +1,6 @@
 <?php
 
-    require_once "db.php";
+require_once "vendor/autoload.php";
 
     $db = new DB();
 
