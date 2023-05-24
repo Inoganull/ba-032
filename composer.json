@@ -9,6 +9,9 @@
     "require": {},
     "autoload": {
         "files": ["helpers.php"],
-        "classmap": ["Utils/"]
+        "psr-4": {
+            "App\\": "src/App",
+            "Utils\\": "src/Utils"
+        }    
     }
 }

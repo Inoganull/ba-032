@@ -2,6 +2,11 @@
 
     require_once "vendor/autoload.php";
 
+    // use Utils\Message;
+    // $message = new Message();
+    // dd($message->announce());
+    use Utils\DB;
+
     $db = new DB();
 
     $students = $db->index();
