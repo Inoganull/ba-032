@@ -1,13 +1,10 @@
 <?php
 
-    require_once "vendor/autoload.php";
+    require_once __DIR__ . "/vendor/autoload.php";
+    
+    use App\Utils\Database;
 
-    // use Utils\Message;
-    // $message = new Message();
-    // dd($message->announce());
-    use Utils\DB;
-
-    $db = new DB();
+    $db = new Database();
 
     $students = $db->index();
 

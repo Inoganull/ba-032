@@ -1,9 +1,11 @@
 <?php
 
-require_once "vendor/autoload.php";
+    require_once __DIR__ . "/vendor/autoload.php";
+        
+    use App\Utils\Database;
 
-$db = new DB();
+    $db = new Database();
 
-$student = $db->destroy($_GET['id']);
+    $db-> destroy($_GET['id']);
 
 ?>

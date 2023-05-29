@@ -1,8 +1,10 @@
 <?php
 
-require_once "vendor/autoload.php";
+    require_once __DIR__ . "/vendor/autoload.php";
 
-    $db = new DB();
+    use App\Utils\Database;
+
+    $db = new Database();
 
     $student = $db->show($_GET['id']);
 

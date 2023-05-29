@@ -1,9 +1,11 @@
 <?php
 
-require_once "vendor/autoload.php";
+    require_once __DIR__ . "/vendor/autoload.php";
 
-    $db = new DB();
+    use App\Utils\Database;
 
-    $student = $db->update($_POST);
+    $db = new Database();
+
+    $db->update($_POST);
 
 ?>
