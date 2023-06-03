@@ -3,6 +3,7 @@
     namespace App\Utils;
 
     use Illuminate\Database\Capsule\Manager as DB;
+    use App\Utils\Student;
 
     class Database
     {
@@ -30,40 +31,26 @@
 
         public function index()
         {
-            $students = DB::table('students')->get();
-            return $students;
+            return Student::get();
         }
 
         public function show($id)
         {
-            $student = DB::table('students')->where('id', $id)->first();
-            return $student;
+            return Student::find($id);
         }
 
         public function store($data)
         {
-            $id = DB::table('students')->insertGetId([
-                'name' => $data['name'],
-                'email' => $data['email'],
-                'gender' => $data['gender'],
-                'dob' => $data['dob'],
-                'age' => $data['age']
-            ]);
+            $student = Student::create($data);
         
-            if ($id) {
-                header("location: edit.php?id={$id}");
+            if ($student) {
+                header("location: edit.php?id={$student->id}");
             }
         }
 
         public function update($data)
         {
-            $result = DB::table('students')->where('id', $data['id'])->update([
-                'name' => $data['name'],
-                'email' => $data['email'],
-                'gender' => $data['gender'],
-                'dob' => $data['dob'],
-                'age' => $data['age']
-            ]);
+            $result = Student::where('id', $data['id'])->update($data);
             
             if ($result) {
                 header("location: index.php");
@@ -72,7 +59,7 @@
 
         public function destroy($id)
         {
-            $result = DB::table('students')->where('id', $id)->delete();
+            $result = Student::destroy($id);
 
             if($result) {
                 header("location: index.php");
