@@ -1,8 +1,8 @@
 <?php
 
-        namespace App\Utils;
+    namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+    use Illuminate\Database\Eloquent\Model;
 
     class Student extends Model
     {

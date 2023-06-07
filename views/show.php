@@ -1,18 +1,3 @@
-<?php
-
-    require_once __DIR__ . "/vendor/autoload.php";
-
-    use App\Utils\Database;
-    use Symfony\Component\HttpFoundation\Request;
-
-    $request = Request::createFromGlobals();
-
-    $db = new Database();
-
-    $student = $db->show($request->query->get('id'));
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,9 +19,9 @@
                     <p>DOB: <?php echo $student->dob; ?></p>
                     <p>Age: <?php echo $student->age; ?></p>
 
-                    <a href="index.php" class="btn btn-primary">Back</a>
-                    <a href="edit.php?id=<?php echo $student->id; ?>" class="btn btn-info">Edit</a>
-                    <a href="destroy.php?id=<?php echo $student->id; ?>" class="btn btn-danger">Delete</a>
+                    <a href="index" class="btn btn-primary">Back</a>
+                    <a href="edit?id=<?php echo $student->id; ?>" class="btn btn-info">Edit</a>
+                    <a href="destroy?id=<?php echo $student->id; ?>" class="btn btn-danger">Delete</a>
                 <?php else: ?>
                     <p>Student Not Found.</p>
                 <?php endif; ?>

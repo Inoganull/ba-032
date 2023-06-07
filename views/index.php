@@ -1,15 +1,3 @@
-<?php
-
-    require_once __DIR__ . "/vendor/autoload.php";
-    
-    use App\Utils\Database;
-
-    $db = new Database();
-
-    $students = $db->index();
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +11,7 @@
     <div class="container mt-4">
         <div class="row">
             <div class="col-10">
-                <a href="create.php" class="btn btn-primary">Create New Student</a>
+                <a href="create" class="btn btn-primary">Create New Student</a>
             </div>
         </div>
         <div class="row mt-4">
@@ -43,8 +31,8 @@
                                 <td><?php echo $student->email; ?></td>
                                 <td><?php echo ucfirst($student->gender); ?></td>
                                 <th>
-                                    <a href="show.php?id=<?php echo $student->id; ?>" class="btn btn-primary btn-sm" >Detail</a>
-                                    <a href="destroy.php?id=<?php echo $student->id; ?>" class="btn btn-outline-danger btn-sm">Delete</a>
+                                    <a href="show?id=<?php echo $student->id; ?>" class="btn btn-primary btn-sm" >Detail</a>
+                                    <a href="delete?id=<?php echo $student->id; ?>" class="btn btn-outline-danger btn-sm">Delete</a>
 
                                 </th>
                             </tr>

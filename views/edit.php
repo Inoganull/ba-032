@@ -1,15 +1,3 @@
-<?php
-
-    require_once __DIR__ . "/vendor/autoload.php";
-
-    use App\Utils\Database;
-
-    $db = new Database();
-
-    $student = $db->show($_GET['id']);
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +14,7 @@
                 <?php if($student): ?>
                     <h3>Edit Student</h3>
 
-                    <form action="update.php" method="POST">
+                    <form action="update" method="POST">
                         <input type="hidden" name="id" value="<?php echo $student->id; ?>">
 
                         <div class="form-group">
@@ -59,7 +47,7 @@
                         </div>
 
                         <button class="btn btn-primary">Update Student</button>
-                        <a href="index.php" class="btn btn-danger">Cancel</a>
+                        <a href="index" class="btn btn-danger">Cancel</a>
                     </form>
 
                 <?php else: ?>

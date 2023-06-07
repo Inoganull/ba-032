@@ -12,7 +12,7 @@
         <div class="row justify-content-center">
             <div class="col-8">
                 <h3>Create New Student</h3>
-                <form action="store.php" method="POST">
+                <form action="store" method="POST">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" name="name" class="form-control" placeholder="Name">
@@ -43,7 +43,7 @@
                     </div>
 
                     <button class="btn btn-primary">Create New Student</button>
-                    <a href="index.php" class="btn btn-primary">Back</a>
+                    <a href="index" class="btn btn-primary">Back</a>
                 </form>
             </div>
         </div>
